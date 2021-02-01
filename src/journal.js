@@ -1,9 +1,17 @@
-export default function Journal(title, entry) {
+export function Journal(title, entry) {
   this.entry = entry;
   this.title = title;
 }
 
+export function Entry(totalWords) {
+  this.totalWords = totalWords;
+}
+
 Journal.prototype.returnEntry = function() {
-  console.log(this.entry);
-  return (this.title + "\n" + this.entry);
+  return this.title + "<br>" + this.entry;
 };
+
+Entry.prototype.wordCount = function() {
+  return this.totalWords.split(" ").length;
+};
+
