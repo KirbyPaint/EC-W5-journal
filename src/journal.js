@@ -17,4 +17,14 @@ Entry.prototype.wordCount = function() {
 
 Entry.prototype.vowels = function() {
   return this.totalWords.match(/[aeiouy]/gi).length;
-}
+};
+
+Entry.prototype.consonant = function() {
+  const totalVowels = this.totalWords.match(/[aeiouy]/gi).length;
+  const stringLength = this.totalWords.length;
+  const totalConsonants = stringLength - (this.totalWords.match(/\s/gi).length) - totalVowels;
+
+  console.log(this.totalWords.match(/\s/gi).length);
+
+  return totalConsonants;
+};
