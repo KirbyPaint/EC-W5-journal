@@ -8,7 +8,7 @@ export function Entry(totalWords) {
 }
 
 Journal.prototype.returnEntry = function() {
-  return this.title + "<br>" + this.entry;
+  return this.title + "<br>";
 };
 
 Entry.prototype.wordCount = function() {
@@ -24,7 +24,14 @@ Entry.prototype.consonant = function() {
   const stringLength = this.totalWords.length;
   const totalConsonants = stringLength - (this.totalWords.match(/\s/gi).length) - totalVowels;
 
-  console.log(this.totalWords.match(/\s/gi).length);
-
   return totalConsonants;
+};
+
+Entry.prototype.preview = function() {
+  const wordsArray = this.totalWords.split(" ");
+  let newString = "";
+  for (let i = 0; i < 8; i++) {
+    newString += " " + wordsArray[i];
+  }
+  return newString;
 };

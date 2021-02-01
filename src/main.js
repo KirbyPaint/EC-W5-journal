@@ -12,10 +12,11 @@ $(document).ready(function() {
     const journal = new Journal(title, entry);
     const words = new Entry(entry);
     const response = journal.returnEntry();
+    const preview = words.preview();
     const totalWords = words.wordCount();
     const vowels = words.vowels();
     const consonants = words.consonant();
-    $('#response').append("<p>" + response + "</p><br>");
+    $('#response').append("<p>" + response + preview + "...</p><br>");
     $('#response').append("Total word count: " + totalWords + "<br>");
     $('#response').append("Total vowels (including Y): " + vowels + "<br>");
     $('#response').append("Total consonants (NOT including Y): " + consonants);
