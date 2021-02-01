@@ -13,7 +13,9 @@ $(document).ready(function() {
     const words = new Entry(entry);
     const response = journal.returnEntry();
     const totalWords = words.wordCount();
+    const vowels = words.vowels();
     $('#response').append("<p>" + response + "</p><br>");
-    $('#response').append("Total word count: " + totalWords);
+    $('#response').append("Total word count: " + totalWords + "<br>");
+    $('#response').append("Total vowels (including Y): " + vowels);
   });
 });

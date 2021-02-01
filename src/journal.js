@@ -15,3 +15,6 @@ Entry.prototype.wordCount = function() {
   return this.totalWords.split(" ").length;
 };
 
+Entry.prototype.vowels = function() {
+  return this.totalWords.match(/[aeiouy]/gi).length;
+}
