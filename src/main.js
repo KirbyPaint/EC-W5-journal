@@ -12,7 +12,7 @@ $(document).ready(function() {
     const journal = new Journal(title, entry);
     const words = new Entry(entry);
     const response = journal.returnEntry();
-    const preview = words.preview();
+    const preview = words.getTeaser();
     const totalWords = words.wordCount();
     const vowels = words.vowels();
     const consonants = words.consonant();

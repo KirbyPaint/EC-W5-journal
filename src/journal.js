@@ -27,7 +27,7 @@ Entry.prototype.consonant = function() {
   return totalConsonants;
 };
 
-Entry.prototype.preview = function() {
+Entry.prototype.getTeaser = function() {
   const wordsArray = this.totalWords.split(" ");
   let newString = "";
   for (let i = 0; i < 8; i++) {
